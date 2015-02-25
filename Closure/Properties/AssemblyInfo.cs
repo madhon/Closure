@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Madhon")]
 [assembly: AssemblyProduct("Closure")]
-[assembly: AssemblyCopyright("Copyright © Madhon 2009")]
+[assembly: AssemblyCopyright("Copyright © Madhon 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
