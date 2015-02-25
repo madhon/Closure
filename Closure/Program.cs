@@ -1,12 +1,12 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using System.Web;
-using System.Xml;
-using System.Threading.Tasks.Dataflow;
-
-namespace Closure
+﻿namespace Closure
 {
+    using System;
+    using System.IO;
+    using System.Net;
+    using System.Threading.Tasks.Dataflow;
+    using System.Web;
+    using System.Xml;
+
     public class Program
     {
         private const string Data =
@@ -69,7 +69,5 @@ namespace Closure
             inputBlock.Complete();
             outputBlock.Completion.Wait();
         }
-    
-
     }
 }

@@ -59,6 +59,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>T4DocoptNet.tt</DependentUpon>
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +70,7 @@
     <None Include="T4DocoptNet.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4DocoptNet.cs</LastGenOutput>
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </None>
     <None Include="T4DocoptNet.tt.hooks.t4" />
   </ItemGroup>
