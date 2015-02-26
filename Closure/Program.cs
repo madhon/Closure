@@ -6,6 +6,7 @@
     using System.Threading.Tasks.Dataflow;
     using System.Web;
     using System.Xml;
+    using System.Xml.Linq;
 
     public class Program
     {
@@ -44,20 +45,20 @@
                     return client.UploadString(Url, apiData);
                 });
 
-            var convertBlock = new TransformBlock<string, XmlDocument>(
+            var convertBlock = new TransformBlock<string, XDocument>(
                 (input) =>
                 {
-                    Console.WriteLine("Converting...");
-                    var xml = new XmlDocument();
-                    xml.LoadXml(input);
+                    Console.WriteLine("Converting to XDocument...");
+                    var xml = XDocument.Parse(input);
                     return xml;
                 });
 
-            var outputBlock = new ActionBlock<XmlDocument>(
+            var outputBlock = new ActionBlock<XDocument>(
                 (input) =>
                 {
                     Console.WriteLine("Writing compressed-" + fileName);
-                    File.WriteAllText("compressed-" + fileName, input.SelectSingleNode("//compiledCode").InnerText);
+                    XElement compiledCode = input.Element("compilationResult").Element("compiledCode");
+                    File.WriteAllText("compressed-" + fileName, compiledCode.Value);
                 });
 
             inputBlock.LinkTo(readBlock, new DataflowLinkOptions { PropagateCompletion = true });
