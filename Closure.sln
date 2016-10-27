@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Closure", "Closure\Closure.csproj", "{B1D645E0-F90C-4B4B-BD9B-5072645D3CD0}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ClosureF", "ClosureF\ClosureF.fsproj", "{FA121BA9-57F2-4289-AEBB-ABBEB4B0B912}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,12 +17,16 @@ Global
 		{B1D645E0-F90C-4B4B-BD9B-5072645D3CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1D645E0-F90C-4B4B-BD9B-5072645D3CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1D645E0-F90C-4B4B-BD9B-5072645D3CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA121BA9-57F2-4289-AEBB-ABBEB4B0B912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA121BA9-57F2-4289-AEBB-ABBEB4B0B912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA121BA9-57F2-4289-AEBB-ABBEB4B0B912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA121BA9-57F2-4289-AEBB-ABBEB4B0B912}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		BuildVersion_UpdateFileVersion = False
 		BuildVersion_BuildVersioningStyle = None.None.YearDayOfYear.TimeStamp
+		BuildVersion_UpdateFileVersion = False
 	EndGlobalSection
 EndGlobal

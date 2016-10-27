@@ -1,7 +1,7 @@
-﻿Closure Compiler CLI
+﻿﻿Closure Compiler CLI
 
 Usage:
   closure FILENAME
 
 Explanation:
-    Processes file using the closure compiler 
+Processes file using the closure compiler 

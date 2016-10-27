@@ -16,7 +16,7 @@ T4DocopNet Version 0.1.0
 // by install.ps1. It can also be set manually to point
 // to the right path. 
 #>
-<#@ assembly name="C:\dev\Closure2\packages\docopt.net.0.6.1.6\lib\net40\DocoptNet.dll"  #>
+<#@ assembly name="C:\dev\jd\Closure\packages\docopt.net.0.6.1.9\lib\net40\DocoptNet.dll"  #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Linq" #>
@@ -35,30 +35,30 @@ using DocoptNet;
 namespace <#= System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("NamespaceHint") #>
 {
 <#
-	var templateDir = Path.GetDirectoryName(Host.TemplateFile);
-	var files = Directory.EnumerateFiles(templateDir).Where(f => f.EndsWith(".usage.txt"));
-	foreach (var file in files)
-	{
-		var entry = new UsageFileEntry(file);
+    var templateDir = Path.GetDirectoryName(Host.TemplateFile);
+    var files = Directory.EnumerateFiles(templateDir).Where(f => f.EndsWith(".usage.txt"));
+    foreach (var file in files)
+    {
+        var entry = new UsageFileEntry(file);
 #>
-	// Generated class for <#= Path.GetFileName(entry.FileName) #>
+    // Generated class for <#= Path.GetFileName(entry.FileName) #>
 	public class <#= entry.Name #>Args
 	{
 		public const string USAGE = @"<#= entry.Usage #>";
-		private readonly IDictionary<string, ValueObject> _args;
+	    private readonly IDictionary<string, ValueObject> _args;
 		public <#= entry.Name #>Args(ICollection<string> argv, bool help = true,
-													  object version = null, bool optionsFirst = false, bool exit = false)
+                                                      object version = null, bool optionsFirst = false, bool exit = false)
 		{
 			_args = new Docopt().Apply(USAGE, argv, help, version, optionsFirst, exit);
 		}
 
-		public IDictionary<string, ValueObject> Args
-		{
-			get { return _args; }
-		}
+        public IDictionary<string, ValueObject> Args
+        {
+            get { return _args; }
+        }
 
 <#
-		var s = new Docopt().GenerateCode(entry.Usage);
+        var s = new Docopt().GenerateCode(entry.Usage);
 		PushIndent("		");
 		Write(s);
 		ClearIndent();
@@ -66,7 +66,7 @@ namespace <#= System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("Name
 	}
 
 <#
-	}
+    }
 
 #>	
 }
@@ -86,7 +86,7 @@ namespace <#= System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("Name
 
 		private static string ExtractName(string fileName)
 		{
-		
+	    
 			var s = Path.GetFileName(fileName).Replace(".usage.txt", "");
 			var res = "";
 			var first = true;
